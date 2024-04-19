@@ -1,14 +1,20 @@
 import React from "react";
-import Header from "./components/pages/Header";
-import Main from "./components/pages/Main";
-import Register from "./components/pages/register/Register";
+import { Routes, Route } from "react-router-dom";
+import { Main } from "./components/pages/Main";
+import { Register } from "./components/pages/register/Register";
 
 const App = () => {
   return (
     <>
-      <Header />
+      <header>
+        <a href="/">Home</a>
+        <a href="/register">Register</a>
+      </header>
       <Main />
-      <Register />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </>
   );
 };
